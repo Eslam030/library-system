@@ -3,6 +3,7 @@ package com.example.library_system.controller;
 import com.example.library_system.model.Book;
 import com.example.library_system.model.Patron;
 import com.example.library_system.service.PatronService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
