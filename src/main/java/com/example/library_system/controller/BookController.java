@@ -7,12 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Serializable;
 import java.util.*;
 
 
 @RestController
 @RequestMapping("/api/books")
-public class BookController {
+public class BookController  {
     @Autowired
     private BookService book_service ;
     private HashMap<String , Object> response ;
@@ -22,6 +23,7 @@ public class BookController {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(book_service.getAllBooks()) ;
         }catch (Exception ex) {
+            System.out.println(ex);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ArrayList<>());
         }
     }

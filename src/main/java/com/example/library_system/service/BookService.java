@@ -15,7 +15,7 @@ import java.util.List;
 public class BookService {
     @Autowired
     private BookRepository bookRepository;
-    @Cacheable(value = "books")
+
     public List<Book> getAllBooks () {
         return bookRepository.findAll() ;
     }

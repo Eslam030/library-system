@@ -16,7 +16,6 @@ import java.util.List;
 public class PatronService {
     @Autowired
     private PatronRepository patronRepository ;
-    @Cacheable(value = "patrons")
     public List<Patron> getAllPatrons () {
         return patronRepository.findAll() ;
     }

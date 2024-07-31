@@ -2,10 +2,12 @@ package com.example.library_system.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Patron {
+public class Patron implements Serializable {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -17,7 +19,7 @@ public class Patron {
     private String contactInformation ;
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "patron" , orphanRemoval = true)
-    private List<Borrowing> borrowings ;
+    private List<Borrowing> borrowings = new ArrayList<>();
 
     public Patron(Long id , String name , String contactInformation) {
         this.PatronId = id ;

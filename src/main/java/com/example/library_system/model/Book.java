@@ -1,13 +1,15 @@
 package com.example.library_system.model;
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
 @Entity
 
-public class Book {
+public class Book implements Serializable {
 
 
     @Id
@@ -27,7 +29,7 @@ public class Book {
     private Long isbn ;
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "book" , orphanRemoval = true)
-    private List<Borrowing> borrowings ;
+    private List<Borrowing> borrowings = new ArrayList<>();
 
     public Book () {
 

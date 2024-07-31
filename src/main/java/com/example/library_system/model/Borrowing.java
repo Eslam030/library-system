@@ -2,13 +2,14 @@ package com.example.library_system.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
 
 
 @Entity
-public class Borrowing {
+public class Borrowing implements Serializable {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id ;
